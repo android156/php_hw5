@@ -6,6 +6,7 @@ use app\engine\Autoload;
 
 include "../config/config.php";
 include "../engine/Autoload.php";
+include '../vendor/autoload.php';
 
 spl_autoload_register([new Autoload(), 'loadClass']);
 
@@ -17,7 +18,7 @@ $actionName = $url[2];
 $controllerClass = CONTROLLER_NAMESPACE . ucfirst($controllerName) . "Controller";
 
 if (class_exists($controllerClass)) {
-    $controller = new $controllerClass(new Render());
+    $controller = new $controllerClass(new \app\engine\TwigRender());
     $controller->runAction($actionName);
 } else {
     echo "404";
