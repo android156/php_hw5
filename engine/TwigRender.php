@@ -12,7 +12,8 @@ class TwigRender implements IRenderer
         require_once '../vendor/autoload.php';
 
         $loader = new \Twig\Loader\FilesystemLoader('../twigtemplates');
-        $twig = new \Twig\Environment($loader);
+        $twig = new \Twig\Environment($loader, ['debug' => true]);
+        $twig->addExtension(new \Twig\Extension\DebugExtension());
 
         return $twig->render($template . '.twig', $params);
     }

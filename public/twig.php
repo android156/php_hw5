@@ -7,7 +7,5 @@ $twig->addExtension(new \Twig\Extension\DebugExtension());
 
 echo $twig->render('../twigtemplates/layouts/catalog.twig',
     [
-        'catalog' =>
-            [['id' => 1, 'name' => 'Вася', 'price' => 10],
-            ['id' => 2, 'name' => 'Петя', 'price' => 10]]
+        'catalog' =>  ['id' => 1, 'name' => 'Вася', 'price' => 10]
     ]);
