@@ -11,9 +11,10 @@ class TwigRender implements IRenderer
     public function renderTemplate($template, $params = []) {
         require_once '../vendor/autoload.php';
 
-        $loader = new \Twig\Loader\FilesystemLoader('/');
-        $twig = new \Twig\Environment($loader);
+        $loader = new \Twig\Loader\FilesystemLoader('../twigtemplates');
+        $twig = new \Twig\Environment($loader, ['debug' => true]);
+        $twig->addExtension(new \Twig\Extension\DebugExtension());
 
-        return $twig->render('template.twig', ['name' => 'Fabien']);
+        return $twig->render($template . '.twig', $params);
     }
 }

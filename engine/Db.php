@@ -10,8 +10,8 @@ class Db
         'driver' => 'mysql',
         'host' => 'localhost:3306',
         'login' => 'root',
-        'password' => 'root',
-        'database' => 'shop',
+        'password' => '',
+        'database' => 'shop_new',
         'charset' => 'utf8'
     ];
 

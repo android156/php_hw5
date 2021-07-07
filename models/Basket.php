@@ -25,6 +25,6 @@ class Basket extends DBModel
 
     protected static function getTableName()
     {
-        return 'basket';
+        return 'cart_goods_detailed';
     }
 }
